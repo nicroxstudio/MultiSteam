@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{52A556C6-4898-E0A1-3243-0A9612AF838B}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "MultiBrainCloud",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
