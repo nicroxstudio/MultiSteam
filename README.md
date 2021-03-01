@@ -34,3 +34,10 @@ Existen 2 carpetas dentro del directorio del proyecto **Multiplayer_BrainCloud**
 5. Cerramos El proyecto y en "*TestMultigame.uproject*" , **botón derecho > Switch Unreal Engine Version > version build ...**
 6. Abrir proyecto "*Developer server > build*" y luego "Developer Editor > build".
 7. Modificar proyecto para *Multiplayer como describe el video*.
+
+##### Crear acceso directo para crear servidor dedicado
+
+Creamos un acceso directo , *> boton derecho > propiedades*
+```sh
+C:\Users\multimedia\OneDrive\Escritorio\PROYECTOS\Multiplayer_BrainCloud\Empaquetado\MultiBrainCloudServer.exe /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap -log
+```
