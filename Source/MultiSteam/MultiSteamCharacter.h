@@ -4,10 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "MultiBrainCloudCharacter.generated.h"
+#include "MultiSteamCharacter.generated.h"
 
 UCLASS(config=Game)
-class AMultiBrainCloudCharacter : public ACharacter
+class AMultiSteamCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -19,7 +19,7 @@ class AMultiBrainCloudCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
 public:
-	AMultiBrainCloudCharacter();
+	AMultiSteamCharacter();
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)

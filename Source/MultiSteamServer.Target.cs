@@ -4,12 +4,12 @@ using UnrealBuildTool;
 using System.Collections.Generic;
 
 [SupportedPlatforms(UnrealPlatformClass.Server)]
-public class MultiBrainCloudServerTarget : TargetRules
+public class MultiSteamServerTarget : TargetRules
 {
-    public MultiBrainCloudServerTarget(TargetInfo Target) : base(Target)
+    public MultiSteamServerTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Server;
 		BuildEnvironment = TargetBuildEnvironment.Shared;
-		ExtraModuleNames.Add("MultiBrainCloud");
+		ExtraModuleNames.Add("MultiSteam");
 	}
 }

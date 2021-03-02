@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class MultiBrainCloud : ModuleRules
+public class MultiSteam : ModuleRules
 {
-	public MultiBrainCloud(ReadOnlyTargetRules Target) : base(Target)
+	public MultiSteam(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 

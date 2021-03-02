@@ -39,5 +39,5 @@ Existen 2 carpetas dentro del directorio del proyecto **Multiplayer_Steam**
 
 Creamos un acceso directo , *> boton derecho > propiedades*
 ```sh
-C:\Users\multimedia\OneDrive\Escritorio\PROYECTOS\Multiplayer_BrainCloud\Empaquetado\MultiBrainCloudServer.exe /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap -log
+C:\Users\multimedia\OneDrive\Escritorio\PROYECTOS\Multiplayer_BrainCloud\Empaquetado\MultiSteamServer.exe /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap -log
 ```

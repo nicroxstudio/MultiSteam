@@ -3,12 +3,12 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class MultiBrainCloudEditorTarget : TargetRules
+public class MultiSteamEditorTarget : TargetRules
 {
-	public MultiBrainCloudEditorTarget(TargetInfo Target) : base(Target)
+	public MultiSteamEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
-		ExtraModuleNames.Add("MultiBrainCloud");
+		ExtraModuleNames.Add("MultiSteam");
 	}
 }

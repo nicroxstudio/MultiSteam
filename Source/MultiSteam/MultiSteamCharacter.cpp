@@ -1,6 +1,6 @@
 // Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 
-#include "MultiBrainCloudCharacter.h"
+#include "MultiSteamCharacter.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -10,9 +10,9 @@
 #include "GameFramework/SpringArmComponent.h"
 
 //////////////////////////////////////////////////////////////////////////
-// AMultiBrainCloudCharacter
+// AMultiSteamCharacter
 
-AMultiBrainCloudCharacter::AMultiBrainCloudCharacter()
+AMultiSteamCharacter::AMultiSteamCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -50,61 +50,61 @@ AMultiBrainCloudCharacter::AMultiBrainCloudCharacter()
 //////////////////////////////////////////////////////////////////////////
 // Input
 
-void AMultiBrainCloudCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
+void AMultiSteamCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	// Set up gameplay key bindings
 	check(PlayerInputComponent);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
-	PlayerInputComponent->BindAxis("MoveForward", this, &AMultiBrainCloudCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &AMultiBrainCloudCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("MoveForward", this, &AMultiSteamCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AMultiSteamCharacter::MoveRight);
 
 	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
 	// "turn" handles devices that provide an absolute delta, such as a mouse.
 	// "turnrate" is for devices that we choose to treat as a rate of change, such as an analog joystick
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
-	PlayerInputComponent->BindAxis("TurnRate", this, &AMultiBrainCloudCharacter::TurnAtRate);
+	PlayerInputComponent->BindAxis("TurnRate", this, &AMultiSteamCharacter::TurnAtRate);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
-	PlayerInputComponent->BindAxis("LookUpRate", this, &AMultiBrainCloudCharacter::LookUpAtRate);
+	PlayerInputComponent->BindAxis("LookUpRate", this, &AMultiSteamCharacter::LookUpAtRate);
 
 	// handle touch devices
-	PlayerInputComponent->BindTouch(IE_Pressed, this, &AMultiBrainCloudCharacter::TouchStarted);
-	PlayerInputComponent->BindTouch(IE_Released, this, &AMultiBrainCloudCharacter::TouchStopped);
+	PlayerInputComponent->BindTouch(IE_Pressed, this, &AMultiSteamCharacter::TouchStarted);
+	PlayerInputComponent->BindTouch(IE_Released, this, &AMultiSteamCharacter::TouchStopped);
 
 	// VR headset functionality
-	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AMultiBrainCloudCharacter::OnResetVR);
+	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AMultiSteamCharacter::OnResetVR);
 }
 
 
-void AMultiBrainCloudCharacter::OnResetVR()
+void AMultiSteamCharacter::OnResetVR()
 {
 	UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
 }
 
-void AMultiBrainCloudCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
+void AMultiSteamCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
 {
 		Jump();
 }
 
-void AMultiBrainCloudCharacter::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location)
+void AMultiSteamCharacter::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location)
 {
 		StopJumping();
 }
 
-void AMultiBrainCloudCharacter::TurnAtRate(float Rate)
+void AMultiSteamCharacter::TurnAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerYawInput(Rate * BaseTurnRate * GetWorld()->GetDeltaSeconds());
 }
 
-void AMultiBrainCloudCharacter::LookUpAtRate(float Rate)
+void AMultiSteamCharacter::LookUpAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerPitchInput(Rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
 }
 
-void AMultiBrainCloudCharacter::MoveForward(float Value)
+void AMultiSteamCharacter::MoveForward(float Value)
 {
 	if ((Controller != NULL) && (Value != 0.0f))
 	{
@@ -118,7 +118,7 @@ void AMultiBrainCloudCharacter::MoveForward(float Value)
 	}
 }
 
-void AMultiBrainCloudCharacter::MoveRight(float Value)
+void AMultiSteamCharacter::MoveRight(float Value)
 {
 	if ( (Controller != NULL) && (Value != 0.0f) )
 	{
