@@ -1,10 +1,10 @@
-# MultiBrainCloud
+# Multi Player Steam
 
 > Ejemplo de desarrollo multiplayer con lobby en unreal 4 , para la versión 4.24
 
-Existen 2 carpetas dentro del directorio del proyecto **Multiplayer_BrainCloud**
+Existen 2 carpetas dentro del directorio del proyecto **Multiplayer_Steam**
 
-1. **MultiBrainCloud**: Donde se encuentra el proyecto para Visual Studio y Unreal. En el se genearn los binarios y las modificaciones del proyecto.
+1. **MultiSteam**: Donde se encuentra el proyecto para Visual Studio y Unreal. En el se genearn los binarios y las modificaciones del proyecto.
 
 2. **Empaquetado**: Donde Hubicaremos los proyectos empaquetados tanto de *cliente* como de *servidor*
 
